@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:47:33 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/03 16:30:07 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:48:22 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@ class Bureaucrat
 {
 	private:
 	const std::string _name;
-	unsigned int _grade;
+	int _grade;
 	
 	public:
 	Bureaucrat();
-	Bureaucrat(unsigned int grade, std::string name);
+	Bureaucrat(int grade, std::string name);
 	~Bureaucrat();
 	Bureaucrat(const Bureaucrat &copy);
 	Bureaucrat &operator=(const Bureaucrat &other);
-	std::string Get_Name();
-	unsigned int Get_Grade();
+	std::string Get_Name() const;
+	int Get_Grade() const;
+	void promote();
+	void demote();
 	
 	class GradeTooLoLowException: public std::exception
 	{
