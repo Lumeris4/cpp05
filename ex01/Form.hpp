@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:14:25 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/04 14:17:44 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:43:03 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class Form
 	~Form();
 	Form(Form &copy);
 	Form &operator=(const Form &other);
-	std::string get_name();
-	bool get_is_signed();
-	const int get_sign();
-	const int get_exec();
+	const std::string get_name() const;
+	bool get_is_signed() const;
+	const int get_sign() const;
+	const int get_exec() const;
 	void be_signed(Bureaucrat &bureau);
 	class GradeTooLowException: public std::exception
 	{
@@ -43,3 +43,5 @@ class Form
 		const char *what() const throw();
 	};
 };
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
