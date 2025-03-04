@@ -6,11 +6,12 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:57:28 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/04 12:18:14 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:22:49 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _name("undifined"), _grade(0)
 {
@@ -77,6 +78,21 @@ void Bureaucrat::demote()
 		throw GradeTooHighException();
 	else
 		this->_grade--;
+}
+
+void Bureaucrat::signForm(Form &lala)
+{
+	try
+	{
+		if (lala.be_signed(*this) == true)
+			std::cout << this->_name << " signed " << lala.get_name();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " couldn't sign " << lala.get_name()
+					<< " Because " << e.what() << std::endl;
+	}
+				
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)

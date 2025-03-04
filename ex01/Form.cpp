@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/04 14:46:35 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:58:21 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,18 @@ std::ostream &operator<<(std::ostream &os, const Form &b)
 	else
 		std::cout << " signed\n";
 	return os;
+}
+
+bool Form::be_signed(Bureaucrat &bureau)
+{
+	if (bureau.Get_Grade() == this->get_is_signed())
+	{
+		this->_is_signed = true;
+		return true;
+	}
+	else if (bureau.Get_Grade() < this->get_is_signed())
+	{
+		throw GradeTooLowException();
+		return false;
+	}
 }
