@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/04 14:58:21 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:56:10 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ Form &Form::operator=(const Form &other)
 	return *this;
 }
 
-const int Form::get_exec() const
+int Form::get_exec() const
 {
 	return this->_grade_excecute;
 }
 
-const int Form::get_sign() const
+int Form::get_sign() const
 {
 	return this->_grade_sign;
 }
