@@ -6,13 +6,16 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:47:33 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/04 15:56:55 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/05 09:52:44 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #include <string>
 #include <iostream>
+class Form;
 
 class Bureaucrat
 {
@@ -46,3 +49,4 @@ class Bureaucrat
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b);
+#endif
