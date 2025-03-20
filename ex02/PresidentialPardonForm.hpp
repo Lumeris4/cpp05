@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:59:32 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/05 11:14:55 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:03:49 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,19 @@
 
 class PresidentialPardonForm: public AForm
 {
+	private:
+		const std::string target;
 	public:
 	PresidentialPardonForm();
-	PresidentialPardonForm(int sign, int exec);
+	PresidentialPardonForm(const std::string target);
 	~PresidentialPardonForm();
 	PresidentialPardonForm(PresidentialPardonForm &copy);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-	void 
+	const std::string getTarget() const;
+	class IsNotSigned: public std::exception
+	{
+		public:
+		const char *what() const throw();
+	};
+	void execute(Bureaucrat const &executor) const;
 };

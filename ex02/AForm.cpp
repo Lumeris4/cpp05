@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/05 10:01:12 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:24:54 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,9 @@ bool AForm::be_signed(Bureaucrat &bureau)
 		throw GradeTooLowException();
 		return false;
 	}
+}
+
+void AForm::execute(const Bureaucrat &executor) const
+{
+	std::cout << executor.Get_Name() << "execute nothing !\n";
 }

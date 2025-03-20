@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:47:33 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/05 10:04:01 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:17:06 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 	void promote();
 	void demote();
 	void signForm(AForm &lala);
+	void execute(AForm const &form);
 	
 	class GradeTooLowException: public std::exception
 	{

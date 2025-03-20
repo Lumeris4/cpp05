@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:14:25 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/05 10:04:59 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 13:20:09 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class AForm
 	int get_sign() const;
 	int get_exec() const;
 	bool be_signed(Bureaucrat &bureau);
+	virtual void execute(Bureaucrat const &executor) const;
 	class GradeTooLowException: public std::exception
 	{
 		public:
