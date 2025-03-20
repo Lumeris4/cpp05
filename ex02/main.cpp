@@ -6,12 +6,14 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/05 10:03:28 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 15:21:01 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 
 int main()
 {
@@ -32,5 +34,41 @@ int main()
 	{
 		std::cerr << " nothing "<< e.what() << '\n';
 	}
+
+	std::cout << "\n----------------------Test Form-------------------------\n\n";
+		
+	Bureaucrat *a = new Bureaucrat(24, "Gilbert");
+	Bureaucrat *b = new Bureaucrat(1, "Leo");
+	std::cout << *a << std::endl;
+	std::cout << *b << std::endl;
+	AForm *form1 = new PresidentialPardonForm("THE GOAT");
+	try
+	{
+		a->execute(*form1);	
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "The Form can't be execute because " << e.what() << '\n';
+	}
+	a->signForm(*form1);
+	try
+	{
+		a->execute(*form1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "The Form can't be execute because " << e.what() << '\n';
+	}
+	try
+	{
+		b->execute(*form1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "The Form can't be execute because " << e.what() << '\n';
+	}
+	delete a;
+	delete b;
+	delete form1;	
 	return 0;
 }

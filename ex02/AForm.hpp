@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:14:25 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/20 13:20:09 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 14:55:29 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
 	AForm(AForm &copy);
 
 	public:
-	~AForm();
+	virtual ~AForm();
 	AForm &operator=(const AForm &other);
 	const std::string get_name() const;
 	bool get_is_signed() const;
@@ -42,13 +42,13 @@ class AForm
 	class GradeTooLowException: public std::exception
 	{
 		public:
-		const char *what() const throw();
+		virtual const char *what() const throw();
 	};
 
 	class GradeTooHighException: public std::exception
 	{
 		public:
-		const char *what() const throw();
+		virtual const char *what() const throw();
 	};
 };
 

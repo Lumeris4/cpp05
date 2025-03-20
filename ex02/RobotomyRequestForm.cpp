@@ -6,12 +6,13 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:26:54 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/20 14:27:11 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/20 14:50:11 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45), target("nothing") {};
 
