@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/20 13:24:54 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:29:27 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AForm::AForm(): _name("undifined"), _is_signed(false), _grade_sign(0), _grade_ex
 	return;
 }
 
-AForm::AForm(std::string name, int sign, int exec): _name(name), _grade_sign(sign), _grade_excecute(exec)
+AForm::AForm(std::string name, int sign, int exec): _name(name), _is_signed(false) ,_grade_sign(sign), _grade_excecute(exec)
 {
 	return;
 }
