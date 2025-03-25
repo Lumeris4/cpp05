@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:57:28 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/20 13:26:24 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:21:30 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void Bureaucrat::signForm(AForm &lala)
 	try
 	{
 		if (lala.be_signed(*this) == true)
-			std::cout << this->_name << " signed " << lala.get_name();
+			std::cout << this->_name << " signed " << lala.get_name() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

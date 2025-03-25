@@ -6,12 +6,12 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:57:28 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/25 15:21:40 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:20:59 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name("undifined"), _grade(0)
 {
@@ -80,7 +80,7 @@ void Bureaucrat::demote()
 		this->_grade--;
 }
 
-void Bureaucrat::signForm(Form &lala)
+void Bureaucrat::signForm(AForm &lala)
 {
 	try
 	{
@@ -91,8 +91,13 @@ void Bureaucrat::signForm(Form &lala)
 	{
 		std::cout << this->_name << " couldn't sign " << lala.get_name()
 					<< " Because " << e.what() << std::endl;
-	}
-				
+	}				
+}
+
+void Bureaucrat::execute(AForm const &form)
+{
+	form.execute(*this);
+	std::cout << this->Get_Name() << " executed " << form.get_name() << "\n";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
