@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/31 14:21:49 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 15:46:15 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,14 @@ int main()
 	Intern Romain;
 	AForm *Romainform;
 
-	Romainform = Romain.makeForm("presidential request", "Zorglub");
+	try
+	{
+		Romainform = Romain.makeForm("presidenal request", "Zorglub");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	a->signForm(*Romainform);
 	try
 	{
