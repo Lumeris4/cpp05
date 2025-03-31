@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/25 15:20:29 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:21:49 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int main()
 	Bureaucrat *b = new Bureaucrat(1, "Leo");
 	std::cout << *a << std::endl;
 	std::cout << *b << std::endl;
-	AForm *form1 = new ShrubberyCreationForm("THE GOAT");
+	AForm *form1 = new PresidentialPardonForm("THE GOAT");
+	std::cout << *form1 << std::endl; 
 	try
 	{
 		a->execute(*form1);	
