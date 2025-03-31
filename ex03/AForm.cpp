@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/25 14:29:27 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 14:08:22 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ std::ostream &operator<<(std::ostream &os, const AForm &b)
 
 bool AForm::be_signed(Bureaucrat &bureau)
 {
-	if (bureau.Get_Grade() >= this->get_is_signed())
+	if (bureau.Get_Grade() <= this->get_sign())
 	{
 		this->_is_signed = true;
 		return true;

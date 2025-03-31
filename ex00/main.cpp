@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/03 16:44:22 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:47:56 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int main()
 {
+	Bureaucrat *a = new Bureaucrat(150, "Patrick");
+	std::cout << *a << "\n";
 	try
 	{
-		Bureaucrat Jean_Michel(225, "Patrick");
+		a->promote();
 	}
 	catch(const std::exception& e)
 	{
@@ -31,5 +33,6 @@ int main()
 	{
 		std::cerr << " nothing "<< e.what() << '\n';
 	}
+	delete a;
 	return 0;
 }
