@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 13:26:54 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/20 14:50:11 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:40:01 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ const std::string RobotomyRequestForm::getTarget() const
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-    std::srand(std::time(0));  // Initialise la graine aléatoire (à faire une seule fois dans le programme)
+    std::srand(std::time(0));
     
-    int random = std::rand() % 2; // Génère 0 ou 1
-    
+    int random = std::rand() % 2;
     if (this->get_is_signed() == false)
         throw IsNotSigned();
     else if (executor.Get_Grade() > this->get_exec())
