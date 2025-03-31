@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:47:33 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/03 16:48:22 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 15:42:40 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ class Bureaucrat
 	void promote();
 	void demote();
 	
-	class GradeTooLoLowException: public std::exception
+	class GradeTooLowException: public std::exception
 	{
 		public:
 		const char *what() const throw();
 	};
 	
-	class GradeTooLoHighException: public std::exception
+	class GradeTooHighException: public std::exception
 	{
 		public:
 		const char *what() const throw();

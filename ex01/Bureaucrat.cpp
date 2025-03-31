@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:57:28 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/25 15:21:40 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 15:43:29 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,18 +66,18 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 
 void Bureaucrat::promote()
 {
-	if (this->_grade + 1 > 150)
-		throw GradeTooHighException();
-	else
-		this->_grade++;
-}
-
-void Bureaucrat::demote()
-{
 	if (this->_grade - 1 < 1)
 		throw GradeTooHighException();
 	else
 		this->_grade--;
+}
+
+void Bureaucrat::demote()
+{
+	if (this->_grade + 1 > 150)
+		throw GradeTooLowException();
+	else
+		this->_grade++;
 }
 
 void Bureaucrat::signForm(Form &lala)

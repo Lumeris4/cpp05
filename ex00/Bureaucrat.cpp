@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:57:28 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/03 16:48:36 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/03/31 15:43:20 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Bureaucrat::Bureaucrat(int grade, std::string name): _name(name)
 {
 	std::cout << this->_name << " Constructor called\n";
 	if (grade > 150)
-		throw GradeTooLoHighException();
+		throw GradeTooHighException();
 	else if (grade < 1)
-		throw GradeTooLoLowException();
+		throw GradeTooLowException();
 	this->_grade = grade; 
 }
 
@@ -53,30 +53,30 @@ std::string Bureaucrat::Get_Name() const
 	return this->_name;
 }
 
-const char *Bureaucrat::GradeTooLoLowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Error grade too low";
 }
 
-const char *Bureaucrat::GradeTooLoHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "Error grade too High";
 }
 
 void Bureaucrat::promote()
 {
-	if (this->_grade + 1 > 150)
-		throw GradeTooLoHighException();
+	if (this->_grade - 1 < 1)
+		throw GradeTooHighException();
 	else
-		this->_grade++;
+		this->_grade--;
 }
 
 void Bureaucrat::demote()
 {
-	if (this->_grade - 1 < 1)
-		throw GradeTooLoHighException();
+	if (this->_grade + 1 > 150)
+		throw GradeTooLowException();
 	else
-		this->_grade--;
+		this->_grade++;
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &b)
