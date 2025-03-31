@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 
-NAME = clap
+NAME = bureau
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
