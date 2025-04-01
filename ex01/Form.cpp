@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/31 14:22:47 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:15:59 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ std::ostream &operator<<(std::ostream &os, const Form &b)
 	os << b.get_name() << " is a Form with the grade " << b.get_sign()
 	<< " required for signed and " << b.get_exec() << " required for execute and actually the Form is ";
 	if (b.get_is_signed() == false)
-		std::cout << " not signed\n";
+		std::cout << "not signed\n";
 	else
-		std::cout << " signed\n";
+		std::cout << "signed\n";
 	return os;
 }
 
