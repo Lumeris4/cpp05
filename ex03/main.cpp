@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/31 15:46:15 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:42:33 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 	Bureaucrat *b = new Bureaucrat(1, "Leo");
 	std::cout << *a << std::endl;
 	std::cout << *b << std::endl;
-	AForm *form1 = new PresidentialPardonForm("THE GOAT");
+	AForm *form1 = new ShrubberyCreationForm("THE GOAT");
 	std::cout << *form1 << std::endl; 
 	try
 	{
@@ -70,19 +70,11 @@ int main()
 		std::cerr << "The Form can't be execute because " << e.what() << '\n';
 	}
 	Intern Romain;
-	AForm *Romainform;
-
+	AForm *Romainform = NULL;
 	try
 	{
-		Romainform = Romain.makeForm("presidenal request", "Zorglub");
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	a->signForm(*Romainform);
-	try
-	{
+		Romainform = Romain.makeForm("presidential pardon", "Zorglub");
+		a->signForm(*Romainform);
 		b->execute(*Romainform);
 	}
 	catch(const std::exception& e)
