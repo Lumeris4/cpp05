@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 14:10:05 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/31 14:08:09 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:17:53 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ const char *AForm::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &os, const AForm &b)
 {
-	os << b.get_name() << " is a Form with the grade " << b.get_is_signed()
+	os << b.get_name() << " is a Form with the grade " << b.get_sign()
 	<< " required for signed and " << b.get_exec() << " required for execute and actually the Form is ";
 	if (b.get_is_signed() == false)
 		std::cout << " not signed\n";
