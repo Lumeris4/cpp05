@@ -6,7 +6,7 @@
 /*   By: lelanglo <lelanglo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 16:25:37 by lelanglo          #+#    #+#             */
-/*   Updated: 2025/03/31 13:47:56 by lelanglo         ###   ########.fr       */
+/*   Updated: 2025/04/01 13:44:08 by lelanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	Bureaucrat *a = new Bureaucrat(150, "Patrick");
+	Bureaucrat *a = new Bureaucrat(1, "Patrick");
 	std::cout << *a << "\n";
 	try
 	{
